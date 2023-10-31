@@ -1,2 +1,2 @@
-# paw-web
-A website for Pay and Wash
+# Pay and Wash
+A website and home repository for Pay and Wash.
