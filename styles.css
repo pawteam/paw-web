@@ -1,0 +1,23 @@
+::selection {
+	background-color: lightgreen;
+	color: black;
+}
+
+body {
+	font-family: "Courier New";
+	background-color: black;
+	color: lightgreen;
+}
+
+a {
+	color: red;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a::selection {
+	background-color: darkred;
+}
