@@ -1,0 +1,22 @@
+{
+	"name": "pay-and-wash",
+	"main": "index.js",
+	"repository": "https://github.com/pawteam/pay-and-wash.git",
+	"author": "iuevix",
+	"contributors": [
+		"romw314 <106016361+romw314@users.noreply.github.com>"
+	],
+	"license": "MIT",
+	"scripts": {
+		"import-page-scripts": "copyfiles -f -e \"**/*.test.js\" \"./web-scripts/**/*\" www",
+		"dev": "live-server --verbose www",
+		"test": "jest --roots web-scripts"
+	},
+	"devDependencies": {
+		"browser-env": "^3.3.0",
+		"copyfiles": "^2.4.1",
+		"jest": "^29.7.0",
+		"live-server": "^1.2.2",
+		"node-fetch-commonjs": "^3.3.2"
+	}
+}
