@@ -8,7 +8,7 @@
 	],
 	"license": "MIT",
 	"scripts": {
-		"import-page-scripts": "copyfiles -f -e \"**/*.test.js\" \"./web-scripts/**/*\" www",
+		"import-page-scripts": "copyfiles -f -e \"**/*.test.js\" \"./web-scripts/**/*\" www/js",
 		"dev": "live-server --verbose www",
 		"test": "jest --roots web-scripts"
 	},

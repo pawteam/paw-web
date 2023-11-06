@@ -1,0 +1,23 @@
+.enabled::selection {
+	background-color: lightgreen;
+	color: black;
+}
+
+body.enabled {
+	font-family: "Courier New", Helvtica, Arial, Verdata, Tahoma, serif;
+	background-color: black;
+	color: lightgreen;
+}
+
+a {
+	color: red;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a::selection {
+	background-color: darkred;
+}
