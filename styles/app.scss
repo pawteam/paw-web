@@ -1,0 +1,41 @@
+body.enabled {
+	font-family: "Courier New", Helvtica, Arial, Verdata, Tahoma, serif;
+	background-color: black;
+	color: lightgreen;
+
+	*::selection {
+		background-color: lightgreen;
+		color: black;
+	}
+
+	a {
+		color: red;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&::selection {
+			background-color: red;
+			color: black;
+		}
+	}
+
+	button {
+		border: 3px solid red;
+		background-color: inherit;
+		color: red;
+		margin: 2px;
+
+		&:hover {
+			border: 3px solid lightblue;
+			color: lightblue;
+		}
+
+		&:active {
+			border: 5px solid lightblue;
+			color: lightblue;
+			margin: 0;
+		}
+	}
+}
