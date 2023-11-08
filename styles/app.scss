@@ -1,3 +1,5 @@
+$IMG_WIDTH: 160px;
+
 body.enabled {
 	font-family: "Courier New", Helvtica, Arial, Verdata, Tahoma, serif;
 	background-color: black;
@@ -36,6 +38,27 @@ body.enabled {
 			border: 5px solid lightblue;
 			color: lightblue;
 			margin: 0;
+		}
+	}
+
+	.bottom-row {
+		display: inline-block;
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		width: auto;
+		height: $IMG_WIDTH;
+		transform: translateX(-50%);
+
+		img {
+			position: relative;
+			height: $IMG_WIDTH;
+			width: auto;
+			float: left bottom;
+
+			&.machine {
+				height: calc($IMG_WIDTH / 2);
+			}
 		}
 	}
 }
