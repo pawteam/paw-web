@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title>Pay and Wash</title>
-		<link rel="stylesheet" href="/css/app.css"/>
+		<link id="appStyle" rel="stylesheet" href="/css/app.css"/>
 	</head>
 	<body>
 		<script src="/js/site-wrap.js"></script>
@@ -36,6 +36,9 @@
 				});
 				document.body.outerHTML = '<@>LOADING</@>'.replace('@', 'body');
 			});
+			window.devcss = () => {
+				document.querySelector('head').removeChild(document.getElementById('appStyle'));
+			};
 		</script>
 	</head>
 	<body>

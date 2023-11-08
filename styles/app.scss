@@ -1,42 +1,42 @@
-$IMG_WIDTH: 160px;
+@import 'values';
 
 body.enabled {
 	font-family: "Courier New", Helvtica, Arial, Verdata, Tahoma, serif;
-	background-color: black;
-	color: lightgreen;
+	background-color: $back_color;
+	color: $color;
 
 	*::selection {
-		background-color: lightgreen;
-		color: black;
+		background-color: $color;
+		color: $back_color;
 	}
 
 	a {
-		color: red;
+		color: $link_color;
 		text-decoration: none;
 		&:hover {
 			text-decoration: underline;
 		}
 
 		&::selection {
-			background-color: red;
-			color: black;
+			background-color: $link_color;
 		}
 	}
 
 	button {
-		border: 3px solid red;
+		border: 3px solid $button_color;
 		background-color: inherit;
-		color: red;
+		color: $button_color;
 		margin: 2px;
+		user-select: none;
 
 		&:hover {
-			border: 3px solid lightblue;
-			color: lightblue;
+			border: 3px solid $button_hover_color;
+			color: $button_hover_color;
 		}
 
 		&:active {
-			border: 5px solid lightblue;
-			color: lightblue;
+			border: 5px solid $button_active_color;
+			color: $button_active_color;
 			margin: 0;
 		}
 	}
@@ -47,17 +47,17 @@ body.enabled {
 		bottom: 20px;
 		left: 50%;
 		width: auto;
-		height: $IMG_WIDTH;
+		height: $img_height;
 		transform: translateX(-50%);
 
 		img {
 			position: relative;
-			height: $IMG_WIDTH;
+			height: $img_height;
 			width: auto;
 			float: left bottom;
 
 			&.machine {
-				height: calc($IMG_WIDTH / 2);
+				height: calc($img_height / 2);
 			}
 		}
 	}
