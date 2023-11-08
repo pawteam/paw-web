@@ -2,8 +2,11 @@
 
 body.enabled {
 	font-family: "Courier New", Helvtica, Arial, Verdata, Tahoma, serif;
+	font-size: $text_size;
 	background-color: $back_color;
 	color: $color;
+
+	@import 'headers';
 
 	*::selection {
 		background-color: $color;
@@ -23,21 +26,29 @@ body.enabled {
 	}
 
 	button {
-		border: 3px solid $button_color;
+		border: $button_active_border_width solid $button_color;
+		border-top: $button_border_width solid $button_border_color;
+		border-right: $button_border_width solid $button_border_color;
 		background-color: inherit;
 		color: $button_color;
-		margin: 2px;
 		user-select: none;
+		width: $button_width + $button_border_width - $button_active_border_width;
+		height: $button_height + $button_border_width - $button_active_border_width;
+		font-size: $button_text_size;
 
 		&:hover {
-			border: 3px solid $button_hover_color;
+			border: $button_active_border_width solid $button_hover_color;
+			border-top: $button_border_width solid $button_hover_border_color;
+			border-right: $button_border_width solid $button_hover_border_color;
 			color: $button_hover_color;
 		}
 
 		&:active {
-			border: 5px solid $button_active_color;
+			border: $button_active_border_width solid $button_active_color;
 			color: $button_active_color;
-			margin: 0;
+			width: $button_width;
+			height: $button_height;
+			margin-left: $button_border_width - $button_active_border_width;
 		}
 	}
 

@@ -1,14 +1,31 @@
-// image size
+// text
+$title_size: 5em;
+$h1_size: 4em; // this is not used in this site
+$h2_size: 3em;
+$h3_size: default;
+$h4_size: default;
+$h5_size: default;
+$h6_size: default;
+$text_size: 1.5em;
+
+// images
 $img_height: 250px;
 
-// site color
+// website
 $back_color: black;
 $color: lightgreen;
 
-// link color
+// hyperlinks
 $link_color: red;
 
-// button colors
+// buttons
 $button_color: red;
+$button_border_color: darkred;
 $button_hover_color: lightblue;
+$button_hover_border_color: blue;
 $button_active_color: $button_hover_color;
+$button_border_width: 10px;
+$button_active_border_width: 3px;
+$button_width: 100px;
+$button_height: 50px;
+$button_text_size: 0.6em;
