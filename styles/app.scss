@@ -60,12 +60,14 @@ body.enabled {
 		width: auto;
 		height: $img_height;
 		transform: translateX(-50%);
+		user-select: none;
 
 		img {
 			position: relative;
 			height: $img_height;
 			width: auto;
 			float: left bottom;
+			user-select: none;
 
 			&.machine {
 				height: calc($img_height / 2);
