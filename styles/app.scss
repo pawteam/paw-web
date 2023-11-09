@@ -45,6 +45,8 @@ body.enabled {
 
 		&:active {
 			border: $button_active_border_width solid $button_active_color;
+			border-top: $button_active_border_width solid $button_active_border_color;
+			border-right: $button_active_border_width solid $button_active_border_color;
 			color: $button_active_color;
 			width: $button_width;
 			height: $button_height;
