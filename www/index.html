@@ -1,10 +1,55 @@
 <html>
 	<head>
 		<title>Pay and Wash</title>
-		<link rel="stylesheet" href="/styles.css"/>
+		<link id="appStyle" rel="stylesheet" href="/css/app.css"/>
 	</head>
 	<body>
-		<h1>Coming soon</h1>
-		<p>Pay and Wash is now in a very early stage. If you want to play it, go <a href="https://gd.games/iuevix/pay-and-wash">here</a>.</p>
+		<script src="/js/site-wrap.js"></script>
+		<script>
+			async function replaceTag(tag, value, innerHTML) {
+				console.log('_PAW by PAWTeam: replace call', [...arguments]);
+				if (!innerHTML.includes(`{% ${tag} %}`))
+					return;
+				if (typeof(value) === 'function')
+					value = value();
+				console.log('_PAW by PAWTeam: replace', [tag], 'with', [value.then ? (await value) : value], 'in', [innerHTML]);
+				return innerHTML.replace(`{% ${tag} %}`, value.then ? (await value) : value);
+			}
+			function replaceTags(list, innerHTML) {
+				let promise = Promise.resolve(innerHTML);
+				for (const rule of list) {
+					promise = promise.then(html => replaceTag(...rule, html));
+					console.log('_PAW by PAWTeam: replace rule:', ...rule.map(part => [part]));
+				}
+				return promise;
+			}
+			document.addEventListener('DOMContentLoaded', () => {
+				console.time('Replace PAW tags');
+				replaceTags([
+					['description', __PAW.getDescription],
+					['title', 'Pay and Wash']
+				], document.body.innerHTML).then(html => {
+					document.body.outerHTML = '<@ class="enabled"></@>'.replace('@', 'body');
+					console.log('_PAW by PAWTeam: html is', html);
+					document.body.innerHTML = html;
+					console.timeEnd('Replace PAW tags');
+				});
+				document.body.outerHTML = '<@>LOADING</@>'.replace('@', 'body');
+			});
+			window.devcss = () => {
+				document.querySelector('head').removeChild(document.getElementById('appStyle'));
+			};
+		</script>
+	</head>
+	<body>
+		<h1 class="title">{% title %}</h1>
+		{% description %}
+		<button onClick="window.open('https://iuevix.itch.io/pay-and-wash');">Play on itch.io</button>
+		<div class="bottom-row">
+			<img alt="Washing machine" title="Washing machine" src="/img/washingmachine.png" class="machine"/>
+			<img alt="Cafe service"    title="Cafe service"    src="/img/cafeservice.png"/>
+			<img alt="Player"          title="Player"          src="/img/player.png"/>
+			<img alt="Dryer"           title="Dryer"           src="/img/dryer.png"          class="machine"/>
+		</div>
 	</body>
 </html>

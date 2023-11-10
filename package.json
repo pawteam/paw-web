@@ -1,0 +1,31 @@
+{
+	"name": "pay-and-wash",
+	"main": "index.js",
+	"repository": "https://github.com/pawteam/pay-and-wash.git",
+	"author": "iuevix",
+	"contributors": [
+		"romw314 <106016361+romw314@users.noreply.github.com>"
+	],
+	"license": "MIT",
+	"scripts": {
+		"import-page-scripts": "copyfiles -f -e \"**/*.test.js\" \"./web-scripts/**/*\" www/js",
+		"build-css": "sass ./styles:./www/css --no-source-map",
+		"build": "yarn build:yarn",
+		"build:yarn": "yarn import-page-scripts && yarn build-css",
+		"build:npm": "npm run import-page-scripts && npm run build-css",
+		"dev-server": "live-server www",
+		"dev": "yarn dev:yarn",
+		"dev:yarn": "concurrently -n SERVER,SASS -c cyan,green \"yarn dev-server\" \"yarn build-css --watch\"",
+		"dev:npm": "concurrently -n SERVER,SASS \"npm run dev-server\" \"npm run build-css --watch\"",
+		"test": "jest --roots web-scripts"
+	},
+	"devDependencies": {
+		"browser-env": "^3.3.0",
+		"concurrently": "^8.2.2",
+		"copyfiles": "^2.4.1",
+		"jest": "^29.7.0",
+		"live-server": "^1.2.2",
+		"node-fetch-commonjs": "^3.3.2",
+		"sass": "^1.69.5"
+	}
+}

@@ -1,0 +1,79 @@
+@import 'values';
+
+body.enabled {
+	font-family: "Courier New", Helvtica, Arial, Verdata, Tahoma, serif;
+	font-size: $text_size;
+	background-color: $back_color;
+	color: $color;
+
+	@import 'headers';
+
+	*::selection {
+		background-color: $color;
+		color: $back_color;
+	}
+
+	a {
+		color: $link_color;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&::selection {
+			background-color: $link_color;
+		}
+	}
+
+	button {
+		border: $button_active_border_width solid $button_color;
+		border-top: $button_border_width solid $button_border_color;
+		border-right: $button_border_width solid $button_border_color;
+		background-color: inherit;
+		color: $button_color;
+		user-select: none;
+		width: $button_width + $button_border_width - $button_active_border_width;
+		height: $button_height + $button_border_width - $button_active_border_width;
+		font-size: $button_text_size;
+
+		&:hover {
+			border: $button_active_border_width solid $button_hover_color;
+			border-top: $button_border_width solid $button_hover_border_color;
+			border-right: $button_border_width solid $button_hover_border_color;
+			color: $button_hover_color;
+		}
+
+		&:active {
+			border: $button_active_border_width solid $button_active_color;
+			border-top: $button_active_border_width solid $button_active_border_color;
+			border-right: $button_active_border_width solid $button_active_border_color;
+			color: $button_active_color;
+			width: $button_width;
+			height: $button_height;
+			margin-left: $button_border_width - $button_active_border_width;
+		}
+	}
+
+	.bottom-row {
+		display: inline-block;
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		width: auto;
+		height: $img_height;
+		transform: translateX(-50%);
+		user-select: none;
+
+		img {
+			position: relative;
+			height: $img_height;
+			width: auto;
+			float: left bottom;
+			user-select: none;
+
+			&.machine {
+				height: calc($img_height / 2);
+			}
+		}
+	}
+}
