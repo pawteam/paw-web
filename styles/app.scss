@@ -68,11 +68,12 @@ body.enabled {
 			position: relative;
 			height: $img_height;
 			width: auto;
-			float: left bottom;
+			float: left;
 			user-select: none;
 
 			&.machine {
 				height: calc($img_height / 2);
+				top: 50%;
 			}
 		}
 	}
